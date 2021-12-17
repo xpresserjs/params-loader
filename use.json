@@ -1,0 +1,7 @@
+{
+  "xpresser": "=>0.25.4",
+  "namespace": "params-loader",
+  "extends": {
+    "RequestEngine": "./CustomRequestEngine.js"
+  }
+}

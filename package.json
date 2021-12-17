@@ -1,0 +1,25 @@
+{
+  "name": "@xpresser/params-loader",
+  "version": "0.1.0",
+  "description": "Xpresser's url params to state Loader.",
+  "main": "index.js",
+  "repository": "https://github.com/xpresserjs/params-loader.git",
+  "author": "xpresser <hello@trapcode.io>",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "prepublishOnly": "npx tsc",
+    "watch": "npx tsc --watch",
+    "test": "cd tests && npx ts-node-dev --respawn server.ts"
+  },
+  "devDependencies": {
+    "prettier": "^2.5.1",
+    "typescript": "^4.5.4",
+    "xpresser": "^0.25.4"
+  },
+  "keywords": [
+    "xpresser",
+    "plugin",
+    "params"
+  ]
+}

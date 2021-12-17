@@ -1,0 +1,10 @@
+# Created by .ignore support plugin (hsz.mobi)
+node_modules
+.idea
+yarn.lock
+dist
+*.log
+
+# exclude build files
+*.js
+*.d.ts
