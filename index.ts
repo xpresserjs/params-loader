@@ -9,7 +9,7 @@ import MethodWithHttp = Controller.MethodWithHttp;
  * Param type definition.
  */
 type Param = {
-    notFound: (http: Http, value: any) => any;
+    notFound?: (http: Http, value: any) => any;
     load?: (value: any, http: Http) => any;
     as?: string;
     addToBoot?: boolean;
@@ -45,7 +45,7 @@ function generateParamLoader<T extends Params>(params: T) {
             const value = http.params[param as string];
 
             // run not found if param is missing
-            if (!value && value !== 0) return helper.notFound(http, value);
+            if (helper.notFound && !value) return helper.notFound(http, value);
 
             // Get loadedValue of param from loader
             let loadedValue = undefined;
@@ -67,7 +67,7 @@ function generateParamLoader<T extends Params>(params: T) {
             }
 
             // if not loadedValue run notFound
-            if (!loadedValue) return helper.notFound(http, value);
+            if (helper.notFound && !loadedValue) return helper.notFound(http, value);
 
             // add to boot if addToBoot is true
             if (helper.addToBoot) http.addToBoot(helper.as || (param as string), loadedValue);
