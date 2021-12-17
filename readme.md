@@ -6,3 +6,4 @@
 This plugin provides a middleware generator for requiring/loading url params
 
 Documentation: [xpresserjs.com/plugins/@xpresser/params-loader.html](https://xpresserjs.com/plugins/@xpresser/params-loader.html)
+

@@ -56,7 +56,7 @@ class CustomRequestEngine extends $.extendedRequestEngine() {
      * @param param - Param to get
      */
     loadedParam<T>(param: string): T {
-        return this.state.path("loadedParams", {}).get(param, {}) as T;
+        return this.state.path("loadedParams", {}).get(param) as T;
     }
 }
 
