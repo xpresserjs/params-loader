@@ -1,6 +1,6 @@
 {
   "name": "@xpresser/params-loader",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Xpresser's url params to state Loader.",
   "main": "index.js",
   "repository": "https://github.com/xpresserjs/params-loader.git",
