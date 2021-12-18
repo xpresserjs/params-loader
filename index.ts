@@ -44,6 +44,9 @@ function generateParamLoader<T extends Params>(params: T) {
             // Get value of param from http
             const value = http.params[param as string];
 
+            // run not found if param is missing
+            if (helper.notFound && !value) return helper.notFound(http, value);
+
             // Get loadedValue of param from loader
             let loadedValue = undefined;
 
