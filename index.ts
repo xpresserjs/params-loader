@@ -82,7 +82,7 @@ function generateParamLoader<T extends Params>(params: T) {
  * Generate Middleware from defined params.
  * @param params
  */
-export function GenerateParamsMiddleware<T extends Params>(params: T) {
+export function ParamsMiddleware<T extends Params>(params: T) {
     // Generate param loader.
     const loadParam = generateParamLoader(params);
 
