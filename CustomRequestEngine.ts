@@ -13,16 +13,6 @@ class CustomRequestEngine extends $.extendedRequestEngine() {
         return this.loadedParams().hasOwnProperty(param);
     }
 
-    /**
-     * Check if state has multiple loaded params.
-     * @param params - Params to check
-     *
-     * @deprecated This function may not be used.
-     */
-    // hasLoadedParams(params: string[]) {
-    //     const loadedParams = this.loadedParams();
-    //     return params.every((param) => loadedParams.hasOwnProperty(param));
-    // }
 
     /**
      * Add loaded param to state
@@ -42,7 +32,7 @@ class CustomRequestEngine extends $.extendedRequestEngine() {
      */
     loadedParams<T extends Record<string, any>>(pick?: keyof T | Array<keyof T>): T {
         // if no pick, return all loaded params
-        if (!pick) return this.state.get("loadedParams", {});
+        if (!pick) return (this.state.data["loadedParams"] || {}) as T;
 
         // if pick is string convert to array
         if (typeof pick === "string") pick = [pick];

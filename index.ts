@@ -34,7 +34,7 @@ function generateParamLoader<T extends Params>(params: T) {
      */
     return function ParamLoader(param: ParamKeys): MethodWithHttp {
         // If param has no definition, throw error.
-        if (!params[param]) throw new Error(`Definition for param: '${param}' not found!`);
+        if (!params[param]) throw new Error(`Definition for param: '${String(param)}' not found!`);
 
         // Get params definition as `helper`
         const helper = params[param];
